@@ -1,4 +1,4 @@
-##Work in Progress. Function does not run right now.##
+##Fun inventory creation to practice Python. Special thanks to Automate the Bording Stuff with Python authors and CodeCoolGlobal Github.##
 
 import csv 
 
@@ -37,9 +37,35 @@ displayInventory(bag)
 
 #function to add the items and their amount in a table
 
-def print_table(inventory, order=none):
+def print_table(inventory, order=None):
+
+    #making it pretty with the new lines, items' names and counts
+    print("-----------------\n")
+    print("item name | count\n")
+    print("-----------------\n")
+
+    #sorting ascending values
+
+    if order == "count, asc":
+        inventory = sorted(inventory.items(), key = lambda count: count[1])
+        inventory = dict(inventory)
+
+    #sorting descending values
+
+    if order == "count, desc":
+        inventory = sorted(inventory.items, key = lambda count: count[1], reverse = True)
+        inventory = dict(inventory)
+
+    #creating the rows
+    for i, c in inventory.items():
+        print(f"{i:>9} |  {c:>4}\n")
+        # print("".join(i.ljust(max_item_name) for c in i))
+
+    print("-----------------\n")
 
 
+print_table(bag, "count, desc")
+    
 
 
 
