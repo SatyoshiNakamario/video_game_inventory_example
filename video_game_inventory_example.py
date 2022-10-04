@@ -24,8 +24,8 @@ def add_to_inventory(inventory, added_items):
     #add item to file
     for item in inventory:
         for item in loot:
-            if item ==new_item:
-                inventory += 1
+            if item == new_item:
+                inventory[item] += 1
 
 
 #new items from a loot of sorts
